@@ -15,19 +15,19 @@
       <div class="container">
           <div class = "row">
             <div class="col-6">
-              <img src="..\images\logo.png" alt="logo">
+              <img src="..\images\logo.png" style="width:550px" alt="logo">
             </div>
             <div class="col-6"><br>
               <div>
                 <input type="text" id="mail" placeholder="Email">
                 <input type="text" id="mdp" placeholder="Mot de passe">
-                <button class="alert alert-info">S'identifier</button>
+                <button class="btn btn-dark btn-xs">S'identifier</button>
               </div>
               <div class = "text-center">
                 <a href="create.html">Vous n'avez pas encore de compte ? Créez le ici !</a>
               </div>
               <div class="row">
-                <p class="col-12 text-center mt-5 credit">Crédit: <br><span>0</span>€</p>
+                <p class="col-12 text-center mt-3 credit">Crédit: <br><span>0</span>€</p>
               </div >
               <div class="text-center">
                 <div class="alert alert-success" id="enable">Vous pouvez passer commande !</div>
@@ -36,9 +36,16 @@
             </div>
           </div>
           <div class="row text-center">
-              <p class="col-12 text-center mt-5 menuTitle">Plats du jour:</p>
+            <div class="col-12" id="all">
+              <p class="text-center mt-5 menuTitle">Plats du jour:</p>
               <ul class="list-group" id="listeMenu">
               </ul>
+            </div>
+            <div class="col-12" id="cantiniere">
+              <ul class = "list-group" id="listeMenuAdmin"></ul>
+              <input type="text" size="50" id ="plat" placeholder="Nom du plat"><button class="btn btn-dark btn-xs" id="addDish" >Ajouter plat</button>
+              <div class="alert alert-danger" id="empty">Le champ est vide</div>
+            </div>
           </div>
       </div>
 
