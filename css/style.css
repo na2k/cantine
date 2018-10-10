@@ -1,1 +1,11 @@
+body{
+  background: white;
+  color: black;
+}
+
+.container{
+  background: wheat;
+  height: 100vh;
+  border-radius: 10px;
+}
 
