@@ -62,7 +62,12 @@ $('#addDish').click(function(){
 })
 
 $("#listeMenuAdmin").on('click', '.delete', function () {
+  if (confirm("Confirmer la suppression?")) {
     $(this).parent().remove();
     plats.splice($(this).data('listeMenuAdmin'),1)
     showDish();
+  }
+  else {
+    return false;
+  }
 });
