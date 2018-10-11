@@ -1,11 +1,25 @@
-body{
-  background: white;
-  color: black;
+body 
+{
+    background-color: #FFC897;
+    background-image:url(../images/logo.png);
+    background-repeat:no-repeat;
+    background-position:5% 10%;
 }
 
-.container{
-  background: wheat;
-  height: 100vh;
-  border-radius: 10px;
+.bg-base
+{
+    background-color: #d86f6fe6;
+    border-color: #ddaaaae6;
 }
 
+.boutonagrandir
+{
+    width: 100px;
+    height: 25px;
+}
+
+.credit
+{
+    width: 125px;
+    height: 25px;
+}
