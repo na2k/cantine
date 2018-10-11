@@ -17,6 +17,11 @@ function horloge() {
       $('#enable').slideUp('slow');
       $('#disable').slideDown('slow');
     }
+    else
+    {
+      $('#disable').slideUp('slow');
+      $('#enable').slideDown('slow');
+    }
 
   }
   actualiser();
