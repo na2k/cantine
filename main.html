@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\css\main.css">
+    <title>DevDej!</title>
+  </head>
+  <body>
+      <div class="container">
+          <div class = "row">
+            <div class="col-6">
+              <img src="..\images\logo.png" style="width:550px" alt="logo">
+            </div>
+            <div class="col-6"><br>
+              <div>
+                <input type="text" id="mail" placeholder="Email">
+                <input type="text" id="mdp" placeholder="Mot de passe">
+                <button class="btn btn-dark btn-xs">S'identifier</button>
+              </div>
+              <div class = "text-center">
+                <a href="create.html">Vous n'avez pas encore de compte ? Créez le ici !</a>
+              </div>
+              <div class="row">
+                <p class="col-12 text-center mt-3 credit">Crédit: <br><span>0</span>€</p>
+              </div >
+              <div class="text-center">
+                <div class="alert alert-success" id="enable">Vous pouvez passer commande !</div>
+                <div class="alert alert-danger" id="disable">Vous ne pouvez plus passer commande !</div>
+              </div>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-12" id="all">
+              <p class="text-center mt-5 menuTitle">Plats du jour:</p>
+              <ul class="list-group" id="listeMenu">
+              </ul>
+            </div>
+            <div class="col-12" id="cantiniere">
+              <p class="text-center mt-5 enTete">Gestion des menus</p>
+              <div class="mt-2 enTete row">
+                <p class="col-6 align="left"">Plats :</p>
+                <p class="col-6">Prix :</p>
+              </div>
+              <ul class = "list-group" id="listeMenuAdmin"></ul>
+              <input type="text" size="50" id ="plat" placeholder="Nom du plat"><button class="btn btn-dark btn-xs" id="addDish" >Ajouter plat</button>
+              <div class="alert alert-danger" id="empty">Le champ est vide</div>
+            </div>
+          </div>
+      </div>
+
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="..\js\main.js"></script>
+
+</body>
+
+</html>
