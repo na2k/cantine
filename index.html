@@ -16,9 +16,9 @@
   </head>
   <body>
       <div class="container">
-          <div class = "row">
+          <div class = "row bgbase">
             <div class="col-6">
-              <img src="images\logo.png" style="width:50%" alt="logo">
+              <img src="images\logo.png" style="width:100%" alt="logo">
             </div>
             <div class="col-6 mt-5">
               <div>
@@ -32,6 +32,7 @@
               <div class="row">
                 <p class="col-12 text-center mt-3 credit">Crédit: <br><span class="credit" value="0">0</span>€</p>
               </div >
+
               <div class="text-center">
                 <div class="alert alert-success" id="enable">Vous pouvez passer commande !</div>
                 <div class="alert alert-danger" id="disable">Vous ne pouvez plus passer commande !</div>
@@ -45,11 +46,6 @@
               </ul>
             </div>
             <div class="col-12">
-              <p class="text-center mt-5 enTete">Gestion des menus</p>
-              <div class="mt-2 enTete row">
-                <p class="col-6">Plats :</p>
-                <p class="col-6">Prix :</p>
-              </div>
               <ul class="nav nav-tabs">
                 <li class="jour"><a data-toggle="tab" id="ongletLundi" href="#lundi" value="0">Menu Lundi</a></li>
                 <li class="jour"><a data-toggle="tab" id="ongletMardi" href="#mardi" value="1">Menu Mardi</a></li>
@@ -74,12 +70,17 @@
                   <div id="vendredi" class="tab-pane fade">
                   </div>
               </div>
-              <input class="mt-5" type="text" size="50" id ="plat" placeholder="Nom du plat"><button class="btn btn-dark btn-xs" id="addDish" >Ajouter plat</button>
-              <div class="alert alert-danger" id="empty">Le champ est vide</div>
+              <div class="row mt-5 d-flex justify-content-center">
+                <input type="file" id="imagePlat" accept="image/png, image/jpeg"/>
+                <input type="text" size="50" id ="plat" placeholder="Nom du plat"><button class="btn btn-dark btn-xs" id="addDish" >Ajouter plat</button>
             </div>
-            <div class=" row text-center col-12 mt-5">
-              <p class="col-12 enTete panier">Votre panier:</p>
+            <div class="alert alert-danger" id="empty">Le champ est vide</div>
+            </div>
+            <div class="col-12">
+              <div class="mt-5">
+                <div class="enTete mb-5">Votre Panier:</div>
                 <ul id="panier"></ul>
+              </div>
             </div>
           </div>
       </div>
