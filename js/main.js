@@ -1,5 +1,4 @@
 
-
 $( document ).ready(function() {
 
   $('#enable').hide();
@@ -11,30 +10,25 @@ $( document ).ready(function() {
   let cantiniere = true;
   let plats =  [[],[],[],[],[]];
   let cpt = 0;
+  let cout=0;
   var $jourActif;
-  //
-  window.onload=function()
-  {
-    horloge();
-  }
-  function horloge() {
-    function actualiser() {
-      var date = new Date();
-      if(!((date.getHours == 10 && date.getMinutes<30) || date.getHours < 10))
-      {
-        $('#enable').slideUp('slow');
-        $('#disable').slideDown('slow');
-      }
-      else
-      {
-        $('#disable').slideUp('slow');
-        $('#enable').slideDown('slow');
-      }
 
+  $('.cout').append(cout+'€');
+  function horloge()
+  {
+    var date = new Date();
+    if((date.getHours == 10 && date.getMinutes<30) || date.getHours < 10)
+    {
+      $('#enable').slideUp('slow');
+      $('#disable').slideDown('slow');
     }
-    actualiser();
-    setInterval(actualiser,1000);
+    else
+    {
+      $('#disable').slideUp('slow');
+      $('#enable').slideDown('slow');
+    }
   }
+
   horloge();
   function showMenu(email)
   {
@@ -55,7 +49,7 @@ $( document ).ready(function() {
       $jourActif.empty();
       for(let i = 0;i < plats[c].length; i++)
       {
-          $jourActif.append('<li class="list-group-item d-flex justify-content-between plat" value="'+ plats[c][i] +'">'+ plats[c][i] +'<button class="addPlat btn btn-dark btn-xs" data-target="'+i+'">Ajouter au panier</button>' +'<button class="delete btn btn-dark btn-xs" data-target="'+i+'">X</button></li>');
+          $jourActif.append('<li class="list-group-item d-flex justify-content-between align-items-center plat" value="'+ plats[c][i] +'"><img src="images\\burger.jpg" style="width: 70px;" alt="imagePlat">'+ plats[c][i] +'<button class="addPlat btn btn-dark btn-xs" data-target="'+i+'">Ajouter au panier</button>' +'<button class="delete btn btn-dark btn-xs" data-target="'+i+'">X</button></li>');
       }
       if(cantiniere==false)
         $('.delete').hide();
@@ -85,8 +79,22 @@ $( document ).ready(function() {
       showDish(cpt);
   });
 
-  $("body").on('click', ".addPlat", function () {
-    $('#panier').append($(this).parent().attr("value"));
+  $("body").on('click', ".addPlat", function () { // ajouter un plat au panier sous forme de tableau
+    var date=new Date();
+    let temp=1+parseInt(cpt);
+    if(temp==date.getDay())
+    {
+      $('#panier').append('<li class="list-group-item col-12 d-flex justify-content-between align-items-center panier">' +'<img src="images\\burger.jpg" style="width: 70px;" alt="imagePlat">'+ $(this).parent().attr("value") +'<button class="deletePanier btn btn-dark btn-xs">X</button></li>');
+      cout+=5;
+      $('.cout').empty();
+      $('.cout').append(cout+'€');
+    }
   });
 
+
+
+  $("body").on('click', '.deletePanier', function(){ //supprimer un plat du panier
+    $(this).parent().remove();
+    cout-=5;
+  });
 });
