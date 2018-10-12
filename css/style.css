@@ -3,15 +3,30 @@ body
     background-color: #FFC897;
     background-image:url(../images/logo.png);
     background-repeat:no-repeat;
-    background-position:5% 10%;
+    background-position: 25px 75px;
 }
 
-.bg-base
+.bgbase
 {
     background-color: #d86f6fe6;
     border-color: #ddaaaae6;
     height: 110px;
 }
+
+.bgcreate
+{
+    background-color: #d86f6fe6;
+    border-color: #ddaaaae6;
+    height: 345px;
+}
+
+.bgcompte
+{
+    background-color: #d86f6fe6;
+    border-color: #ddaaaae6;
+    height: 250px;
+}
+
 
 .boutonagrandir
 {
@@ -23,4 +38,9 @@ body
 {
     width: 125px;
     height: 25px;
+}
+
+.container
+{
+    margin-bottom: 50px;
 }
