@@ -1,135 +1,111 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Gestion</title>
-  </head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/style.css">
+<title>Gestion</title>
+</head>
   <body>
-      <div class="container">
-            <div class="row">
-                <div class="col-3 ">
-                 </div>
-                 <div class="col-6 btn-danger text-center">
-                        Gestion de la cantine
-                     </div>
-                     <div class="col-3 ">
-                         </div>
-             </div>
-         </div>
-         <br><br><br>
-         <div class="container">
-                <ul class="nav nav-tabs">
-                  <li class="active"><a href="#">Gérer commamande</a></li>
-                  <li><a href="#">Gérer Cagnotte</a></li>
-                </ul>
-               </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 btn-primary">
-                    
-                     
-                         <br>
+    <div class="container bgbase2">
+      <div class="row bgbase">
+        <h1 class="col-12 enTete d-flex justify-content-center align-items-center m-5">
+          Gestion de la cantine
+        </h1>
+      </div>
+      <!-- Nav tabs -->
+  <ul class="nav nav-tabs" id="gestionTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link" id="commandeTab" data-toggle="tab" href="#gestionCommande" role="tab" aria-controls="gestionCommande" aria-selected="true">Gestion des commandes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="cagnotteTab" data-toggle="tab" href="#gestionCagnotte" role="tab" aria-controls="gestionCagnotte" aria-selected="false">Gestion des cagnottes</a>
+    </li>
+  </ul>
 
-                         <form>
-                        
-                                <table class="table">
-                                        <thead class="thead-dark">
-                                          <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Nom</th>
-                                                <th scope="col">Commande</th>
-                                                <th scope="col">Etat</th>
-                                                <th scope="col">Supprimer</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">1</th>
-                                            <td>Commande 1</td>
-                                            <td>fraise</td>
-                                            <td> null </td>
-                                            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">2</th>
-                                            <td>Commande 2</td>
-                                            <td>Fromage</td>
-            
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">3</th>
-                                            <td>Commande 3</td>
-                                            <td>Pate</td>
-            
-                                          </tr>
-                                        </tbody>
-                                      </table>   
-                                
-                        </form>
-
-                        <form>
-                        
-                                <table class="table">
-                                        <thead class="thead-dark">
-                                          <tr>
-                                                <th scope="col">Nom</th>
-                                                <th scope="col">Montant Acutelle</th>
-                                                <th scope="col">Montant Ajouter</th>
-                                                <th scope="col">Ajouter</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">Jean louis</th>
-                                            <td>0 €</td>
-                                            <td><select class=form-control>
-                                                    <option value=un>1</option>
-                                                    <option value=deux>100</option>
-                                                    <option value=trois>10000000</option>
-                                                   </select></td>
-                                            <td><button type="button" class="btn btn-success">Ajouter</button></td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">2</th>
-                                            <td>Commande 2</td>
-                                            <td>Fromage</td>
-            
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">3</th>
-                                            <td>Commande 3</td>
-                                            <td>Pate</td>
-            
-                                          </tr>
-                                        </tbody>
-                                      </table>   
-                                
-                        </form>
-             </div>
-            
-        
-
-        </div> 
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="gestionCommande" role="tabpanel" aria-labelledby="commandeTab"><form>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Commande</th>
+            <th scope="col">Etat</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Commande 1</td>
+            <td>fraise</td>
+            <td> null </td>
+            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Commande 2</td>
+            <td>Fromage</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Commande 3</td>
+            <td>Pate</td>
+          </tr>
+        </tbody>
+      </table>
+    </form></div>
+    <div class="tab-pane" id="gestionCagnotte" role="tabpanel" aria-labelledby="gestionTab">  <form>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Nom</th>
+              <th scope="col">Montant Actuel</th>
+              <th scope="col">Modification du montant</th>
+              <th scope="col">Valider changements</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Jean louis</th>
+              <td>0 €</td>
+              <td>
+                <input type="number"></input>
+              </td>
+              <td>
+                <button type="button" class="btn btn-success">Confirmer</button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Commande 2</td>
+              <td>Fromage</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Commande 3</td>
+              <td>Pate</td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
     </div>
-    
-        
- 
+  </div>
+</div>
 
-
-   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="js/info.js"></script>
-</body>
+    <script src="js/gestion.js"></script>
+  </body>
 </html>
