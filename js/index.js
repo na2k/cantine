@@ -1,9 +1,7 @@
-
 $( document ).ready(function() {
 
   $('#enable').hide();
   $('#disable').hide();
-  $('#all').hide();
   $('.cantiniere').show();
 //  $('.all').hide();
   $('#empty').hide();
@@ -31,7 +29,6 @@ $( document ).ready(function() {
       $('#disable').slideDown('slow');
     }
   }
-
   horloge();
 
   function showMenu(email)
@@ -53,7 +50,7 @@ $( document ).ready(function() {
       $jourActif.empty();
       for(let i = 0;i < plats[c].length; i++)
       {
-          $jourActif.append('<li class="standard bgPlat list-group-item d-flex justify-content-between align-items-center plat" value="'+ plats[c][i] +'"><img src="images\\burger.jpg" style="width: 70px;" alt="imagePlat">'+ plats[c][i] +'<button class="addPlat btn btn-secondary btn-xs" data-target="'+i+'">Ajouter au panier</button>' +'<button class="delete btn btn-secondary btn-xs" data-target="'+i+'">X</button></li>');
+          $jourActif.append('<li class="standard bgPlat list-group-item d-flex justify-content-between align-items-center plat" value="').texts(plats[c][i]).append('"><img src="images\\burger.jpg" style="width: 100px;" alt="imagePlat">').texts(plats[c][i]).append('<button class="addPlat btn btn-secondary" data-target="'+i+'">Ajouter au panier</button>' +'<button class="delete btn btn-secondary" data-target="'+i+'">X</button></li>');
       }
       if(cantiniere==false)
         $('.delete').hide();
@@ -65,7 +62,7 @@ $( document ).ready(function() {
       let plat = $('#plat').val();
       if(plat.length>0)
       {
-          plats[cpt].push(plat);
+          plats[cpt].push(text(plat));
           $('#empty').slideUp('slow');
           $('#plat').val('');
           showDish(cpt);
@@ -88,10 +85,14 @@ $( document ).ready(function() {
     let temp=1+parseInt(cpt);
     if(temp==date.getDay())
     {
-      $('#panier').append('<li class="standard bgPlat list-group-item col-12 d-flex justify-content-between align-items-center panier">' +'<img src="images\\burger.jpg" style="width: 70px;" alt="imagePlat">'+ $(this).parent().attr("value") +'<button class="deletePanier btn btn-secondary btn-xs">X</button></li>');
+      $('#panier').append('<li class="standard bgPlat list-group-item col-12 d-flex justify-content-between align-items-center panier">' +'<img src="images\\burger.jpg" style="width: 70px;" alt="imagePlat">'+ $(this).parent().attr("value") +'<button class="deletePanier btn btn-secondary">X</button></li>');
       cout+=5;
       $('.cout').empty();
       $('.cout').append(cout+'€');
+    }
+    else
+    {
+      alert("Vous ne pouvez pas commander pour un autre jour !");
     }
   });
 
