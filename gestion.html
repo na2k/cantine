@@ -21,17 +21,17 @@
       <!-- Nav tabs -->
   <ul class="nav nav-tabs" id="gestionTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link" id="commandeTab" data-toggle="tab" href="#gestionCommande" role="tab" aria-controls="gestionCommande" aria-selected="true">Gestion des commandes</a>
+      <a class="nav-link enTete" id="commandeTab" data-toggle="tab" href="#gestionCommande" role="tab" aria-controls="gestionCommande" aria-selected="true">Gestion des commandes</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="cagnotteTab" data-toggle="tab" href="#gestionCagnotte" role="tab" aria-controls="gestionCagnotte" aria-selected="false">Gestion des cagnottes</a>
+      <a class="nav-link enTete" id="cagnotteTab" data-toggle="tab" href="#gestionCagnotte" role="tab" aria-controls="gestionCagnotte" aria-selected="false">Gestion des cagnottes</a>
     </li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
     <div class="tab-pane active" id="gestionCommande" role="tabpanel" aria-labelledby="commandeTab"><form>
-      <table class="table">
+      <table class="table standard">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
@@ -63,8 +63,8 @@
       </table>
     </form></div>
     <div class="tab-pane" id="gestionCagnotte" role="tabpanel" aria-labelledby="gestionTab">  <form>
-        <table class="table">
-          <thead class="thead-dark">
+        <table class="table standard">
+          <thead class="thead-dark ">
             <tr>
               <th scope="col">Nom</th>
               <th scope="col">Montant Actuel</th>
@@ -106,6 +106,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="js/gestion.js"></script>
   </body>
 </html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Main</title>
+  </head>
+  <body>
+    <div class="container">
+            <div class="row bgbase">
+              <div class="col-8">
+                <div class="row">
+                <div class="col">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary boutonagrandir active">
+                          <input type="radio" name="options" id="option1" autocomplete="off" checked> Accueil
+                        </label>
+                        <label class="btn btn-secondary boutonagrandir">
+                          <input type="radio" name="options" id="option2" autocomplete="off"> Votre Compte
+                        </label>
+                        <label class="btn btn-secondary boutonagrandir">
+                          <input type="radio" name="options" id="option3" autocomplete="off"> Gestion
+                        </label>
+                        <button type="" class="btn credit btn-primary">Crédit: <span>0</span> €</button>
+                      </div>
+                  </div>
+                  <div class="col">
+              </div>
+            </div>
+            </div>
+              <div class="col-4">
+            <form class="navbar-form navbar-right inline-form">
+
+              <div class="form-group">
+                <input type="text" id="mail" placeholder="Email">
+                <input type="text" id="mdp" placeholder="Mot de passe">
+                <button type="submit" class="btn btn-primary btn-sm"></span> S'identifier</button>
+
+              </div>
+              <div class = "text-center">
+                <a href="create.html">Vous n'avez pas encore de compte ? Créez le ici !</a>
+              </div>
+              <br>
+
+              <div class="text-center">
+                <div class="alert alert-success" id="enable">Vous pouvez passer commande !</div>
+                <div class="alert alert-danger" id="disable">Vous ne pouvez plus passer commande !</div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+
+
+
+        <div class="row text-center">
+          <div class="col-12" id="all">
+            <p class="text-center mt-5 menuTitle">Plats du jour:</p>
+            <ul class="list-group" id="listeMenu">
+            </ul>
+          </div>
+          <div class="col-12">
+            <p class="text-center mt-5 enTete">Gestion des menus</p>
+            <div class="mt-2 enTete row">
+              <p class="col-6">Plats :</p>
+              <p class="col-6">Prix :</p>
+            </div>
+            <ul class="nav nav-tabs">
+              <li class="jour"><a data-toggle="tab" id="ongletLundi" href="#lundi" value="0">Menu Lundi</a></li>
+              <li class="jour"><a data-toggle="tab" id="ongletMardi" href="#mardi" value="1">Menu Mardi</a></li>
+              <li class="jour"><a data-toggle="tab" id="ongletMercredi" href="#mercredi" value="2">Menu Mercredi</a></li>
+              <li class="jour"><a data-toggle="tab" id="ongletJeudi" href="#jeudi" value="3">Menu Jeudi</a></li>
+              <li class="jour"><a data-toggle="tab" id="ongletVendredi" href="#vendredi" value="4">Menu Vendredi</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="lundi" class="tab-pane fade">
+                </div>
+
+                <div id="mardi" class="tab-pane fade">
+                </div>
+
+                <div id="mercredi" class="tab-pane fade">
+                </div>
+
+                <div id="jeudi" class="tab-pane fade">
+                </div>
+
+                <div id="vendredi" class="tab-pane fade">
+                </div>
+            </div>
+            <input class="mt-5" type="text" size="50" id ="plat" placeholder="Nom du plat"><button class="btn btn-dark btn-xs" id="addDish" >Ajouter plat</button>
+            <div class="alert alert-danger" id="empty">Le champ est vide</div>
+          </div>
+          <div class=" row text-center col-12 mt-5">
+            <p class="col-12 enTete panier">Votre panier:</p>
+              <ul id="panier"></ul>
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
+<!--            <div class="row">
+              <p class="col-12 text-center mt-3 credit">Crédit: <br><span>0</span>€</p>
+            </div >-->
