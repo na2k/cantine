@@ -50,7 +50,7 @@ $( document ).ready(function() {
       $jourActif.empty();
       for(let i = 0;i < plats[c].length; i++)
       {
-          $jourActif.append('<li class="standard bgPlat list-group-item d-flex justify-content-between align-items-center plat" value="').texts(plats[c][i]).append('"><img src="images\\burger.jpg" style="width: 100px;" alt="imagePlat">').texts(plats[c][i]).append('<button class="addPlat btn btn-secondary" data-target="'+i+'">Ajouter au panier</button>' +'<button class="delete btn btn-secondary" data-target="'+i+'">X</button></li>');
+          $jourActif.append('<li class="standard bgPlat list-group-item d-flex justify-content-between align-items-center plat" value="'+ plats[c][i] +'"><img src="images\\burger.jpg" style="width: 100px;" alt="imagePlat">'+ plats[c][i] +'<button class="addPlat btn btn-secondary" data-target="'+i+'">Ajouter au panier</button>' +'<button class="delete btn btn-secondary" data-target="'+i+'">X</button></li>');
       }
       if(cantiniere==false)
         $('.delete').hide();
@@ -62,7 +62,7 @@ $( document ).ready(function() {
       let plat = $('#plat').val();
       if(plat.length>0)
       {
-          plats[cpt].push(text(plat));
+          plats[cpt].push(plat);
           $('#empty').slideUp('slow');
           $('#plat').val('');
           showDish(cpt);
