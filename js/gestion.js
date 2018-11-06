@@ -4,6 +4,7 @@ for(var i=0; i < commande.length; i++)commande[i]=new Array(10);
 var cagnotte= new Array(4);
 for(var i=0; i < cagnotte.length; i++)cagnotte[i]=new Array(10);
 
+/* Peut être amélioré avec du back (utilisé un tableau au lieux de 2*/
 cagnotte[0][0]=new Array(" ");
 cagnotte[0][1]=new Array("Jean-pierre");
 cagnotte[0][2]=new Array("Philippe");
