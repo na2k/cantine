@@ -30,12 +30,11 @@ commande[2][3]=new Array("En préparation");
 
 for (i=1; i<cagnotte.length; i++){
 $('#tCagnotte').append('<tr><th scope="row"><div id="Nom">'+cagnotte[0][i]+'</div></th>'+'<td>'+cagnotte[1][i]+' €</td>'+'<td><input type="number"></input></td>'+'<td><button type="button" class="btn btn-success">Confirmer</button></td></tr>');
-}             
+}
 
 for (i=1; i<cagnotte.length; i++){
 $('#tGestioncommande').append('<tr><th scope="row">'+i+'</th><td>'+commande[0][i]+'</td><td>'+commande[1][i]+'</td><td>'+commande[2][i]+'</td>'+'<td><button type="button" class="btn btn-danger" id="'+i+'">Supprimer</button></td>');
-
-}    
+}
 //tGestioncommande
 
 

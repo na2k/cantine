@@ -50,7 +50,7 @@ $( document ).ready(function() {
       $jourActif.empty();
       for(let i = 0;i < plats[c].length; i++)
       {
-          $jourActif.append('<li class="standard bgPlat list-group-item d-flex justify-content-between align-items-center plat" value="'+ plats[c][i] +'"><img src="images\\burger.jpg" style="width: 100px;" alt="imagePlat">'+ plats[c][i] +'<button class="addPlat btn btn-secondary" data-target="'+i+'">Ajouter au panier</button>' +'<button class="delete btn btn-secondary" data-target="'+i+'">X</button></li>');
+          $jourActif.append('<li class="standard bgPlat list-group-item d-flex justify-content-between align-items-center plat" value="'+ plats[c][i] +'"><img src="images\\burger.jpg" style="width: 100px;" alt="imagePlat">'+ plats[c][i] +'<button class="addPlat btn bgInfosGreen" data-target="'+i+'">Ajouter au panier</button>' +'<button class="delete btn btn-danger" data-target="'+i+'">X</button></li>');
       }
       if(cantiniere==false)
         $('.delete').hide();
@@ -73,19 +73,21 @@ $( document ).ready(function() {
       }
   });
 
-  $("body").on('click', ".delete", function () {
-
+  $("body").on('click', ".delete", function ()
+  {
+      console.log($(this).parent());
       $(this).parent().remove();
       plats[cpt].splice($(this).data($jourActif),1)
       showDish(cpt);
   });
 
-  $("body").on('click', ".addPlat", function () { // ajouter un plat au panier sous forme de tableau
+  $("body").on('click', ".addPlat", function () // ajouter un plat au panier sous forme de tableau
+  {
     var date=new Date();
     let temp=1+parseInt(cpt);
     if(temp==date.getDay())
     {
-      $('#panier').append('<li class="standard bgPlat list-group-item col-12 d-flex justify-content-between align-items-center panier">' +'<img src="images\\burger.jpg" style="width: 70px;" alt="imagePlat">'+ $(this).parent().attr("value") +'<button class="deletePanier btn btn-secondary">X</button></li>');
+      $('#panier').append('<li class="standard bgPlat list-group-item col-12 d-flex justify-content-between align-items-center panier">' +'<img src="images\\burger.jpg" style="width: 70px;" alt="imagePlat">'+ $(this).parent().attr("value") +'<button class="deletePanier btn btn-danger">X</button></li>');
       cout+=5;
       $('.cout').empty();
       $('.cout').append(cout+'€');
@@ -95,8 +97,6 @@ $( document ).ready(function() {
       alert("Vous ne pouvez pas commander pour un autre jour !");
     }
   });
-
-
 
   $("body").on('click', '.deletePanier', function(){ //supprimer un plat du panier
     $(this).parent().remove();

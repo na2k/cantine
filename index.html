@@ -25,7 +25,7 @@
                 <div class="form-group">
                   <input class="champConnexion" type="text" id="mail" placeholder="Email">
                   <input class="champConnexion" type="text" id="mdp" placeholder="Mot de passe">
-                  <button type="submit" class="btn btn-primary btn-sm standard"></span> S'identifier</button>
+                  <button type="submit" class="btn btn-sm standard bgInfosGreen"></span> S'identifier</button>
 
                 </div>
                 <div class = "text-center standard">
@@ -44,26 +44,18 @@
           </div>
           <div class="row text-center mt-2">
             <div class="col-12">
-                <div class="row">
-                    <div class="btn-group btn-group-toggle ml-4" data-toggle="buttons">
-                        <label class="btn btn-secondary boutonagrandir active standard">
-                          <input type="radio" name="options" id="option1" autocomplete="off"><p style="color:white">Accueil</p>
-                        </label>
-                        <label class="btn btn-secondary boutonagrandir all standard">
-                          <input type="radio" name="options" id="option2" autocomplete="off"><a href="info.html" style="color:white">Votre Compte</a>
-                        </label>
-                        <label class="btn btn-secondary boutonagrandir cantiniere standard">
-                          <input type="radio" name="options" id="option3" autocomplete="off"><a href="gestion.html" style="color:white">Gestion</a>
-                        </label>
-                        <button type="" class="btn boutonagrandir btn-primary all standard">Crédit: <span>0</span> €</button>
-                      </div>
+                <div class="row rounded bg-secondary p-2">
+                  <a href="#" class="btn btn-menu standard">Accueil</a>
+                  <a href="info.html" class="btn btn-menu standard">Votre compte</a>
+                  <a href="gestion.html" class="btn btn-menu standard">Gestion</a>
+                  <div type="" class="btn standard bgInfosGreen  mt-1"><span class="align-middle">Crédit: <span>0</span> €</span></div>
               </div>
               <ul class="nav nav-tabs">
-                <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletLundi" href="#lundi" value="0">Menu Lundi</a></li>
-                <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletMardi" href="#mardi" value="1">Menu Mardi</a></li>
-                <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletMercredi" href="#mercredi" value="2">Menu Mercredi</a></li>
-                <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletJeudi" href="#jeudi" value="3">Menu Jeudi</a></li>
-                <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletVendredi" href="#vendredi" value="4">Menu Vendredi</a></li>
+                <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletLundi" class="jourMenu" href="#lundi" value="0">Lundi</a></li>
+                <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletMardi" class="jourMenu" href="#mardi" value="1">Mardi</a></li>
+                <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletMercredi" class="jourMenu" href="#mercredi" value="2">Mercredi</a></li>
+                <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletJeudi" class="jourMenu" href="#jeudi" value="3">Jeudi</a></li>
+                <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletVendredi" class="jourMenu" href="#vendredi" value="4">Vendredi</a></li>
               </ul>
 
               <div class="tab-content">
@@ -91,14 +83,15 @@
               <div class="col-12 mt-5">
                   <ul id="panier"><div class="enTeteCommande mb-2">Votre Commande:</div></ul>
               </div>
-              <div class="col-12 d-flex align-items-center" id="commande">
-                <div class="col-4 colorGrey enTete">Total:</div>
-                <div class="col-4 colorPink enTete cout"></div>
-                <div class="col-4">
-                <button class="btn btn-block btn-lg enTete">Commander</button></div>
-              </div>
+            </div>
+            <div class="row d-flex align-items-center" id="commande">
+              <div class="col-4 colorGrey enTete">Total:</div>
+              <div class="col-4 colorPink enTete cout"></div>
+              <div class="col-4">
+              <button class="btn btn-block btn-lg enTete">Commander</button></div>
             </div>
           </div>
+
       </div>
 
 

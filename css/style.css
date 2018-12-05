@@ -1,10 +1,10 @@
 @font-face
 {
-  font-family: 'ChalkdusterLocal';
-  src: url('../font/Chalkduster.eot?') format('eot'),
-       url('../font/Chalkduster.woff') format('woff'),
-       url('../font/Chalkduster.ttf') format('truetype'),
-       url('../font/Chalkduster.svg#Chalkduster') format('svg');
+  font-family: 'RobotoCondensed-Regular-webfontLocal';
+  src: url('../font/RobotoCondensed-Regular-webfont.eot?') format('eot'),
+       url('../font/RobotoCondensed-Regular-webfont.woff') format('woff'),
+       url('../font/RobotoCondensed-Regular-webfont.ttf') format('truetype'),
+       url('../font/RobotoCondensed-Regular-webfont.svg#RobotoCondensed-Regular-webfont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,11 +15,9 @@ body
 {
 background: rgba(0, 0, 0, 0.175);
 }
-/*Rose : 193 – 99 – 124
-police : Chalkduster, fantasy*/
 
 .btn-lg{
-    background:rgba(193 ,99 , 124);
+    background:#00bfa5;
     padding: .1rem 1rem;
     font-size: 1.25rem;
     color:white;
@@ -27,9 +25,14 @@ police : Chalkduster, fantasy*/
     border-radius: 3px;
 
 }
-
-.bgInfosPink{
-  background: rgba(193 ,99 , 124);
+.btn-menu{
+  color: white;
+  margin:0;
+  padding:10px;
+  border-radius:0
+}
+.bgInfosGreen{
+  background: #00bfa5;
   border-radius: 3px;
 }
 
@@ -46,8 +49,8 @@ police : Chalkduster, fantasy*/
   background: rgba(255, 255, 255,0.8);
   position: fixed;
   bottom: 0%;
-  width: 75vw;
-  height:10vh;
+  width: 75%;
+  height:10%;
   left:50vw;
   margin-left: -37.5vw;
   border-radius: 3px;
@@ -57,20 +60,32 @@ police : Chalkduster, fantasy*/
 {
   font-size: 1.8rem;
   font-weight: bold;
-  font-family: "ChalkdusterLocal";
+  font-family: "RobotoCondensed-Regular-webfontLocal";
 }
+
+.votreCompte
+{
+  font-size:3rem;
+  font-weight: bold;
+  font-family: "RobotoCondensed-Regular-webfontLocal";
+}
+
 .enTeteMenu
 {
   font-size: 2rem;
   font-weight: bold;
-  font-family: "ChalkdusterLocal";
+  font-family: "RobotoCondensed-Regular-webfontLocal";
 }
+.jourMenu{
+    color: #00bfa5;
+}
+
 .standard
 {
   font-size:1.6rem;
 }
-.colorPink{
-  color :rgba(193 ,99 , 124);
+.colorGreen{
+  color :#00bfa5;
 }
 .colorGrey{
   color:rgb(108, 117, 125);
@@ -78,19 +93,23 @@ police : Chalkduster, fantasy*/
 .standardInfos{
   font-family: "berkshireswash";
 }
+.btn
+{
+  color:white;
+}
 .enTeteCommande
 {
-  font-family: "ChalkdusterLocal";
+  font-family: "RobotoCondensed-Regular-webfontLocal";
   padding: .5rem 1rem;
   font-size: 2rem;
   color:white;
-  background-color: rgba(193 , 99 , 124, 0.9);
+  background-color: #00bfa5;
   border-radius: 3px;
 }
 
 .bgbase
 {
-    background-color: rgba(193, 99, 124,0.9);
+    background-color: white;
     border-radius: 3px;
 }
 
@@ -116,7 +135,6 @@ police : Chalkduster, fantasy*/
 
 .boutonagrandir
 {
-    width: 100%;
     height: 75%;
 }
 
