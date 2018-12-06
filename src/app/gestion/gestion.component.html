@@ -1,0 +1,52 @@
+<div class="container bgbase2">
+    <div class="row bgbase">
+      <h1 class="col-12 enTete d-flex justify-content-center align-items-center m-5">
+        Gestion de la cantine
+      </h1>
+    </div>
+    <!-- Nav tabs -->
+<ul class="nav nav-tabs" id="gestionTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link enTete" id="commandeTab" data-toggle="tab" href="#gestionCommande" role="tab" aria-controls="gestionCommande" aria-selected="true">Gestion des commandes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link enTete" id="cagnotteTab" data-toggle="tab" href="#gestionCagnotte" role="tab" aria-controls="gestionCagnotte" aria-selected="false">Gestion des cagnottes</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="gestionCommande" role="tabpanel" aria-labelledby="commandeTab"><form>
+    <table class="table standard">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Commande</th>
+          <th scope="col">Etat</th>
+          <th scope="col">Supprimer</th>
+        </tr>
+      </thead>
+      <tbody id="tGestioncommande">
+       
+      </tbody>
+    </table>
+  </form></div>
+  <div class="tab-pane" id="gestionCagnotte" role="tabpanel" aria-labelledby="gestionTab">  <form>
+      <table class="table standard">
+        <thead class="thead-dark ">
+          <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Montant Actuel</th>
+            <th scope="col">Modification du montant</th>
+            <th scope="col">Valider changements</th>
+          </tr>
+        </thead>
+        <tbody id="tCagnotte">
+         
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+</div>

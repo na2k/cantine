@@ -1,0 +1,45 @@
+<ul class="nav nav-tabs">
+    <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletLundi" href="#lundi" value="0">Menu Lundi</a></li>
+    <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletMardi" href="#mardi" value="1">Menu Mardi</a></li>
+    <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletMercredi" href="#mercredi" value="2">Menu Mercredi</a></li>
+    <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletJeudi" href="#jeudi" value="3">Menu Jeudi</a></li>
+    <li class="jour enTeteMenu"><a data-toggle="tab" id="ongletVendredi" href="#vendredi" value="4">Menu Vendredi</a></li>
+  </ul>
+
+  <div class="tab-content">
+      <div id="lundi" class="tab-pane fade">
+      </div>
+
+      <div id="mardi" class="tab-pane fade">
+      </div>
+
+      <div id="mercredi" class="tab-pane fade">
+      </div>
+
+      <div id="jeudi" class="tab-pane fade">
+      </div>
+
+      <div id="vendredi" class="tab-pane fade">
+      </div>
+  </div>
+  <div class="row mt-5 d-flex justify-content-center standard">
+    <input type="file" id="imagePlat" class="cantiniere" accept="image/png, image/jpeg"/>
+    <input type="text" size="50" id ="plat" class="cantiniere" placeholder="Nom du plat"><button class="btn btn-secondary btn-xs cantiniere standard" id="addDish" >Ajouter plat</button>
+  </div>
+  <div class="alert alert-danger standard" id="empty">Le champ est vide</div>
+
+  <div class="col-12 mt-5">
+      <ul id="panier"><div class="enTeteCommande mb-2">Votre Commande:</div></ul>
+  </div>
+
+  <!-- Ajout template ici -->
+
+  <app-template-commande></app-template-commande>
+
+  <!--   -->
+  <div class="col-12 d-flex align-items-center" id="commande">
+    <div class="col-4 colorGrey enTete">Total:</div>
+    <div class="col-4 colorPink enTete cout"></div>
+    <div class="col-4">
+    <button class="btn btn-block btn-lg enTete">Commander</button></div>
+  </div>

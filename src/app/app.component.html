@@ -1,0 +1,43 @@
+
+    <div class="container bgbase2">
+        <div class="row bgbase">
+          <div class="col-6">
+            <img src="assets/images/logoV3.png" class="img-responsive" style="width:80%" alt="logo">
+          </div>
+          <div class="col-6 mt-5">
+            <form class="navbar-form navbar-right inline-form">
+  
+              <div class="form-group">
+                <input class="champConnexion" type="text" id="mail" placeholder="Email">
+                <input class="champConnexion" type="text" id="mdp" placeholder="Mot de passe">
+                <button type="submit" class="btn btn-sm standard bgInfosGreen"> S'identifier</button>
+  
+              </div>
+              <div class="text-center standard">
+                <a href="create.html">Vous n'avez pas encore de compte ? Créez le ici !</a>
+              </div>
+              <br>
+  
+              <div class="text-center">
+                  <div *ngIf="passOrder; then thenBlock else elseBlock"> </div>
+                   <ng-template #thenBlock><div class="alert alert-danger standard" >Vous ne pouvez plus passer commande !</div></ng-template>
+                   <ng-template #elseBlock><div class="alert alert-success standard">Vous pouvez passer commande !</div></ng-template>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row text-center mt-2">
+          <div class="col-12">
+            <div class="row rounded bg-secondary p-2">
+              <a  [routerLink]="['/index']" class="btn btn-menu standard">Accueil</a>
+              <a  [routerLink]="['/info']" class="btn btn-menu standard">Votre compte</a>
+              <a  [routerLink]="['/gestion']" class="btn btn-menu standard">Gestion</a>
+              <div type="" class="btn standard bgInfosGreen  mt-1"><span class="align-middle">Crédit: <span>0</span> €</span></div>
+            </div>
+          </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+  
+
+
