@@ -75,9 +75,11 @@ $( document ).ready(function() {
 
   $("body").on('click', ".delete", function ()
   {
-      console.log($(this).parent());
       $(this).parent().remove();
-      plats[cpt].splice($(this).data($jourActif),1)
+      console.log($(this).data("target"));
+      console.log(plats[cpt]);
+      plats[cpt].splice($(this).data(),1)
+      console.log(plats[cpt]);
       showDish(cpt);
   });
 
