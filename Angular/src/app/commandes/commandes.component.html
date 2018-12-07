@@ -16,13 +16,25 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nom</th>
+          <th scope="col">Prenom</th>
           <th scope="col">Commande</th>
           <th scope="col">Etat</th>
           <th scope="col">Supprimer</th>
         </tr>
       </thead>
-      <tbody id="tGestioncommande">
-
+      <tbody id="tCagnotte">
+        <tr *ngFor="let commande of commandes; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{ commande.personne.name }}</td>
+            <td>{{ commande.personne.prenom }}</td>
+            <td>{{ commande.plat.name }}</td>
+            <td><select>
+              <option *ngFor="let etat of etats">
+                {{ etat }}
+              </option>
+            </select></td>
+            <td><button type="button" class="btn btn-danger" (click)="supprimerCommande()">Supprimer</button></td>
+          </tr>
       </tbody>
     </table>
   </form>

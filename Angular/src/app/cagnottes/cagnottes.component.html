@@ -19,7 +19,14 @@
         </tr>
       </thead>
       <tbody id="tCagnotte">
-
+        <tr *ngFor="let cagnotte of cagnottes">
+          <th scope="row">
+            <div id="Nom"> {{ cagnotte.name }}</div>
+          </th>
+            <td>{{ cagnotte.cagnotte }}</td>
+            <td><input type="number" value=0 /></td>
+            <td><button type="button" class="btn btn-success" (click)="updateCagnotte()">Confirmer</button></td>
+          </tr>
       </tbody>
     </table>
   </form>
