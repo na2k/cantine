@@ -141,3 +141,7 @@ background: rgba(0, 0, 0, 0.175);
 .container{
   margin-bottom: 8%;
 }
+
+.inputCagnotte{
+  text-align: center;
+}
