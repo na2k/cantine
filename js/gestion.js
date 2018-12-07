@@ -46,17 +46,30 @@ cagnotte[1][3]=10;
 
 
 for (i=1; i<cagnotte.length; i++){
-$('#tCagnotte').append('<tr><th scope="row"><div id="Nom">'+cagnotte[0][i]+'</div></th>'+'<td>'+cagnotte[1][i]+'</td>'+'<td><input type="number" value=0></input></td>'+'<td><button type="button" class="btn btn-success updateCagnotte">Confirmer</button></td></tr>');
+$('#tCagnotte').append('<tr><th scope="row"><div id="Nom">'+cagnotte[0][i]+'</div></th>'+'<td>'+cagnotte[1][i]+'</td>'+'<td><input type="number" class="inputCagnotte" value=0></input></td>'+'<td><button type="button" class="btn btn-success updateCagnotte">Confirmer</button></td></tr>');
 }
 
+$("body").on('input', ".inputCagnotte", function() {
+  if (this.value > 0) {
+    this.style.backgroundColor="palegreen";
+    this.style.color="black";
+
+  }
+  else if (this.value < 0) {
+    this.style.backgroundColor="#e57373";
+    this.style.color="white";
+
+  }
+  else {
+    this.style.backgroundColor="white";
+    this.style.color="black";
+
+  }
+});
 // editer le prix d'une commandes
 $("body").on('click', ".updateCagnotte", function() {
   var prix = $(this).parent().parent().children('td').eq(0).text();
   var prixModifie = $(this).parent().parent().children('td').children('input').eq(0).val();
-  console.log("edit commande");
-  console.log(prix);
-  console.log(prixModifie);
-  console.log($(this).parent().parent().children('td').eq(0));
   // $(this).parent().parent().children('td').eq(0)
   $(this).parent().parent().children('td').eq(0).empty().append(parseFloat(prix)+parseFloat(prixModifie));
   $(this).parent().parent().children('td').children('input').val(0);
