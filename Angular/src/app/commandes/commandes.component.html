@@ -1,0 +1,29 @@
+
+  <!-- Nav tabs -->
+<ul class="nav nav-tabs" id="gestionTab" role="tablist">
+<li class="nav-item">
+  <a class="nav-link enTete" id="commandeTab" data-toggle="tab" [routerLink]="['/gestion/commandes']" role="tab" aria-controls="gestionCommande" aria-selected="true">Gestion des commandes</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link enTete" id="cagnotteTab" data-toggle="tab" [routerLink]="['/gestion/cagnottes']" role="tab" aria-controls="gestionCagnotte" aria-selected="false">Gestion des cagnottes</a>
+</li>
+</ul>
+
+<div class="tab-pane active" id="gestionCommande" role="tabpanel" aria-labelledby="commandeTab">
+  <form>
+    <table class="table standard">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Commande</th>
+          <th scope="col">Etat</th>
+          <th scope="col">Supprimer</th>
+        </tr>
+      </thead>
+      <tbody id="tGestioncommande">
+
+      </tbody>
+    </table>
+  </form>
+</div>

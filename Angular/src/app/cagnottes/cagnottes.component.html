@@ -1,0 +1,26 @@
+
+<ul class="nav nav-tabs" id="gestionTab" role="tablist">
+<li class="nav-item">
+  <a class="nav-link enTete" id="commandeTab" data-toggle="tab" [routerLink]="['/gestion/commandes']" role="tab" aria-controls="gestionCommande" aria-selected="true">Gestion des commandes</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link enTete" id="cagnotteTab" data-toggle="tab" [routerLink]="['/gestion/cagnottes']" role="tab" aria-controls="gestionCagnotte" aria-selected="false">Gestion des cagnottes</a>
+</li>
+</ul>
+
+<div class="tab-pane" id="gestionCagnotte" role="tabpanel" aria-labelledby="gestionTab">  <form>
+    <table class="table standard">
+      <thead class="thead-dark ">
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Montant Actuel</th>
+          <th scope="col">Modification du montant</th>
+          <th scope="col">Valider changements</th>
+        </tr>
+      </thead>
+      <tbody id="tCagnotte">
+
+      </tbody>
+    </table>
+  </form>
+</div>

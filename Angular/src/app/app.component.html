@@ -1,0 +1,34 @@
+  <div class = "row bgbase">
+    <div class="col-6">
+      <img src="assets\images\logoV3.png" class="img-responsive" style="width:100%" alt="logo">
+    </div>
+    <div class="col-6 mt-5">
+      <form class="navbar-form navbar-right inline-form">
+
+        <div class="form-group">
+          <input class="champConnexion" type="text" id="mail" placeholder="Email">
+          <input class="champConnexion" type="text" id="mdp" placeholder="Mot de passe">
+          <button type="submit" class="btn btn-sm standard bgInfosGreen">S'identifier</button>
+
+        </div>
+        <div class = "text-center standard">
+          <a href="create.html" >Vous n'avez pas encore de compte ? Créez le ici !</a>
+        </div>
+        <br>
+
+        <div class="text-center">
+          <div class="alert alert-danger standard" id="disable">Vous ne pouvez plus passer commande !</div>
+          <div class="alert alert-success standard" id="enable">Vous pouvez passer commande !</div>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="row rounded bg-secondary p-2">
+    <a href="#" class="btn btn-menu standard">Accueil</a>
+    <a [routerLink]="['infos']" class="btn btn-menu standard">Votre compte</a>
+    <a [routerLink]="['gestion']" class="btn btn-menu standard">Gestion</a>
+    <div type="" class="btn standard bgInfosGreen  mt-1"><span class="align-middle">Crédit: <span>0</span> €</span></div>
+  </div>
+<router-outlet></router-outlet>

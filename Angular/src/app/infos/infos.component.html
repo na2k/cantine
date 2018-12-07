@@ -1,0 +1,139 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Votre compte</title>
+  </head>
+  <body>
+    <div class="container">
+    <div class="row mt-5">
+      <div class="col-6 bgInfosGreen">
+        <div class="enTete text-center">
+          Vos Infos
+        </div>
+        <form>
+          <div class="form-group standardInfos">
+            <label for="InputNom">Nom </label>
+            <input type="nom" class="form-control" id="InputNom" placeholder="Nom" readonly="true">
+          </div>
+          <div class="form-group standardInfos">
+            <label for="InputPrenom">Prenom </label>
+            <input type="prenom" class="form-control" id="InputPrenom" placeholder="Prenom" readonly="true">
+          </div>
+          <div class="form-group standardInfos">
+            <label for="InputEmail">Email </label>
+            <input type="email" class="form-control" id="InputEmail" placeholder="Votre adresse email" readonly="true">
+          </div>
+        </form>
+      </div>
+      <div class="col-6 bgInfosPink">
+        <div class="enTete text-center">
+          Modifier vos Infos
+        </div>
+        <form>
+          <div class="form-group standardInfos">
+            <label for="InputEmail">Nouvel email </label>
+            <input type="email" class="form-control InputEmail" placeholder="Votre nouvelle adresse email">
+          </div>
+          <div class="row standardInfos form-group d-flex justify-content-center">
+            <input type="password" class="form-control col-5" id="currentPassword" placeholder="Mot de passe">
+            <button class="submitChangesEmail btn btn-secondary col-5">Changer email</button>
+          </div>
+          <div class="form-group standardInfos">
+            <label for="newPassword">Nouveau mot de passe</label>
+            <input type="password" class="form-control" id="newPassword" placeholder="Votre nouveau mot de passe">
+          </div>
+          <div class="form-group standardInfos">
+            <label for="verifNewPassword">Vérification nouveau mot de passe</label>
+            <input type="password" class="form-control" id="verifNewPassword" placeholder="Votre nouveau mot de passe">
+          </div>
+          <div class="row standardInfos form-group d-flex justify-content-center">
+            <input type="password" class="form-control col-5" id="currentPassword" placeholder="Mot de passe">
+            <button class="submitChangesPassword btn btn-secondary col-5">Changer mot de passe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-6 bgInfosPink">
+          <div class="text-center enTete mb-3">
+            Suivi de votre credit
+          </div>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Crédit</th>
+                <th scope="col">Débit</th>
+              </tr>
+            </thead>
+            <tbody class="">
+              <tr>
+                <th scope="row">24/10/2020</th>
+                <td>+150€</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">12/09/2020</th>
+                <td></td>
+                <td>-20€</td>
+              </tr>
+              <tr>
+                <th scope="row">03/05/2010</th>
+                <td>+10€</td>
+                <td>-20€</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="col-6 bgInfosGreen">
+        <div class="enTete text-center mb-2">
+          Vos commandes
+        </div>
+
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Commande</th>
+              <th scope="col">Etat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">24/10/2020</th>
+              <td>Carbonara</td>
+              <td>Délivrée</td>
+            </tr>
+            <tr>
+              <th scope="row">12/09/2020</th>
+              <td>Commande 2</td>
+              <td>Fromage</td>
+            </tr>
+            <tr>
+              <th scope="row">03/05/2010</th>
+              <td>Commande 3</td>
+              <td>Pate</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="form-group standardInfos">
+          <button type="editNdf" class="btn btn-secondary">Editer note de frais</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
