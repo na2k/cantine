@@ -2,17 +2,15 @@
     <div class="col-6">
       <img src="assets\images\logoV3.png" class="img-responsive" style="width:100%" alt="logo">
     </div>
-    <div class="col-6 mt-5">
-      <form class="navbar-form navbar-right inline-form">
-
-        <div class="form-group">
-          <input class="champConnexion" type="text" id="mail" placeholder="Email">
-          <input class="champConnexion" type="text" id="mdp" placeholder="Mot de passe">
-          <button type="submit" class="btn btn-sm standard bgInfosGreen">S'identifier</button>
-
+    <div class="col-6 mt-5" >
+      <form class="navbar-form navbar-right inline-form" (ngSubmit)="onSubmit(f)" #f="ngForm" > <!--*ngIf="HIDE != true"-->
+        <div class="form-group" *ngIf="HIDE != false">
+        <input class="champConnexion" type="text" id="mail" placeholder="Email" ngModel required name="email">
+          <input class="champConnexion" type="password" id="mdp" placeholder="Mot de passe" ngModel required name="mdp">
+          <button type="submit" id="submit" class="btn btn-sm standard bgInfosGreen" >S'identifier</button>
         </div>
-        <div class = "text-center standard">
-          <a href="create.html" >Vous n'avez pas encore de compte ? Créez le ici !</a>
+        <div class = "text-center standard" *ngIf="HIDE != false"  >
+          <a [routerLink]="['create']" >Vous n'avez pas encore de compte ? Créez le ici !</a>
         </div>
         <br>
 
@@ -27,8 +25,8 @@
   </div>
   <div class="row rounded bg-secondary p-2">
     <a href="#" class="btn btn-menu standard">Accueil</a>
-    <a [routerLink]="['infos']" class="btn btn-menu standard">Votre compte</a>
-    <a [routerLink]="['gestion']" class="btn btn-menu standard">Gestion</a>
-    <div type="" class="btn standard bgInfosGreen  mt-1"><span class="align-middle">Crédit: <span>0</span> €</span></div>
+    <a [routerLink]="['infos']" class="btn btn-menu standard" *ngIf="HIDE != true" >Votre compte</a>
+    <a [routerLink]="['gestion']" class="btn btn-menu standard" *ngIf="HIDE != true" >Gestion</a>
+    <div type="" class="btn standard bgInfosGreen  mt-1" *ngIf="HIDE != true"><span class="align-middle"  >Crédit: <span>{{user?.credit}}</span> €</span></div>
   </div>
 <router-outlet></router-outlet>

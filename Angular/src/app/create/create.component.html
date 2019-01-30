@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row bgbase">
+          <h1 class="col-12 d-flex justify-content-center align-items-center m-5">Créer un compte</h1>
+    </div>
+  </div>
+  <div class="container enTete">
+    <div class="col-12 bgbase2">
+    <form  (ngSubmit)="onSubmit(f)" #f="ngForm" >    <!--  <--onsubmit="return verifierMdp()" -->
+      <div class="form-group">
+        <label for="lastname">Nom:</label>
+        <input type="text" class="form-control" name="lastname" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="firstname">Prénom:</label>
+        <input type="text" class="form-control" name="firstname" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" name="email" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="mdp">Mot de passe:</label>
+        <input type="password" class="form-control" name="mdp" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="verifMdp">Vérification mot de passe:</label>
+        <input type="password" class="form-control" name="verifMdp" ngModel required>
+      </div>
+      <div class="text-center">
+        <button type="submit" id="submit" class="btn btn-primary mx-auto mb-2">Créer un compte</button>
+      </div>
+    </form>
+  </div>
+</div>

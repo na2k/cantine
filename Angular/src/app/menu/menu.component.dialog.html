@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Votre panier contient :</h1>
+<div mat-dialog-content>
+  
+  <app-plats [etatPanier]='true'  ></app-plats>
+  <button mat-button (click)="onNoClick()" >Retour</button>
+  <button mat-button cdkFocusInitial>Valider votre commande</button>
+<div mat-dialog-actions>
+  
+</div>

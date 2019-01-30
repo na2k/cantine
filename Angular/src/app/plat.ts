@@ -1,14 +1,15 @@
-export class Plat {
-  constructor(
-       public name: string,
-       public resume: string,
-       public price: number,
-       public image: string
-       )
-       {
-           this.name = name;
-           this.resume = resume;
-           this.price = price;
-           this.image = image;
-       }
+export class plat {
+    constructor(
+        public name: string, 
+        public price: string,
+        public resume: string,
+        public image: string,
+        
+    )
+    {
+        this.name = name;
+        this.price = price;
+        this.resume = resume ;
+        this.image = image;
+    };
 }
