@@ -1,15 +1,20 @@
+// Adaptation vers la classe/json user ionic en cours
 export class User {
     constructor(
-        public email: string, 
-        public firstname: string,
         public lastname: string,
-        public mdp: string,
-        
+        public firstname: string,
+        public email: string, 
+        public phone: string,        
+        public pswd: string,        // Transition en cours
+        public money: number,       // Transition en cours
+        public histo: Object,   // Façon de le géré non déterminé
     )
     {
-        this.email = email;
-        this.firstname = firstname;
         this.lastname = lastname ;
-        this.mdp = mdp;
+        this.firstname = firstname; 
+        this.email = email;
+        this.phone = phone;
+        this.pswd = pswd;
+        this.money = money;
     };
 }

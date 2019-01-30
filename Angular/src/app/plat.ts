@@ -1,3 +1,5 @@
+// Adaptation vers la classe/json pannier ionic en cours
+// l'ordre n'est pas définitif
 export class plat {
     constructor(
         public name: string, 

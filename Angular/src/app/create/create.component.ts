@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EnkantService } from '../enkant.service';
+import { User } from '../user';
 
 
 @Component({
@@ -10,16 +11,35 @@ import { EnkantService } from '../enkant.service';
 })
 export class CreateComponent implements OnInit {
 
-  constructor(private router:Router, private enkantService: EnkantService) { }
+  user:User  = new User('','','','','',0,'') ;
 
+  constructor(private router:Router, private enkantService: EnkantService) { }
+  
   ngOnInit() {
   }
 
   onSubmit(form){
-    this.enkantService.addUser(form.form.value)
+
+    if(form.form.value.mdp === form.form.value.verifMdp){
+      this.user.lastname=form.form.value.lastname;
+      this.user.firstname=form.form.value.firstname;
+      this.user.email=form.form.value.email;
+      this.user.phone=form.form.value.phone;
+      this.user.pswd=form.form.value.mdp;
+      this.user.money=0;
+
+
+    this.enkantService.addUser(this.user)
       .subscribe(user => {
         this.router.navigateByUrl('');
       });
-}
+
+    }
+    else
+    {
+      console.log("Les mot de passe ne sont pas identique");
+    }
+
+    }
 
 }

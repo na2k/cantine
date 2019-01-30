@@ -16,7 +16,7 @@ export class EnkantService {
 
   constructor(private http:HttpClient) { }
 
-      
+ //--------------------------------------- [ Partie PLAT ]   // Forte chance que cette partie soit changé entierement pour l'api
     // ** Read  beers
     getPlats (): Observable<plat[]> {
       return this.http.get<plat[]>('https://aston-test-2866c.firebaseio.com/plats.json')
@@ -57,11 +57,12 @@ export class EnkantService {
           catchError(this.handleError('getdays', []))
         );
     }
-//---------------------------------------
+//--------------------------------------- [ Partie USER ]  // Forte chance que cette partie soit changé entierement pour l'api
 
+      //* Récupere tout les utilisateurs */
       getUsers(): Observable<User[]> 
       {
-        return this.http.get<User[]>('https://aston-test-2866c.firebaseio.com/users.json')
+        return this.http.get<User[]>('https://aston-test-2866c.firebaseio.com/user.json')
         .pipe(
           tap(data => {
             data
@@ -71,22 +72,37 @@ export class EnkantService {
         );
       }
 
-        //** Read one beer */
-      getUser(key: string): Observable<User[]>{
-      console.log('https://aston-test-2866c.firebaseio.com/users/'+key+'.json')
-      return this.http.get<User[]>('https://aston-test-2866c.firebaseio.com/users/'+key+'.json')
+      //* Récupere un utilisateur */
+      getUser(key: string): Observable<User[]>
+      {
+      console.log('https://aston-test-2866c.firebaseio.com/user/'+key+'.json')
+      return this.http.get<User[]>('https://aston-test-2866c.firebaseio.com/user/'+key+'.json')
       .pipe(
         tap(data => JSON.stringify(data)),
         catchError(this.handleError('getUser', []))
       );
-    }
-    addUser(User: User): Observable<User> {
-      let url = `https://aston-test-2866c.firebaseio.com/users.json`;
-      return this.http.post<User>(url, User, {responseType: 'json'}).pipe(
-        tap((product: User) => console.log('User added')),
-        catchError(this.handleError<User>('addUser'))
-      );
-}
+      }
+
+      //* Ajout d'utilisateur  */
+      addUser(User: User): Observable<User>
+      {
+        let url = `https://aston-test-2866c.firebaseio.com/user.json`;
+        return this.http.post<User>(url, User, {responseType: 'json'}).pipe(
+          tap((product: User) => console.log('Utilisaeur ajouté')),
+          catchError(this.handleError<User>('addUser'))
+        );
+      }
+
+      //* Edit un utilisateur */
+      editUser(user: User, key: string): Observable<User> 
+      {
+        const url = `https://aston-test-2866c.firebaseio.com/user/`+key+'.json';
+        return this.http.put<User>(url, user, {responseType: 'json'}).pipe(
+          tap((product: User) => console.log('Profile sauvegardé')),
+          catchError(this.handleError<User>('editUser'))
+        );
+      }
+
 //---------------------------------------
 
 
@@ -111,9 +127,4 @@ export class EnkantService {
     };
   }
 
-}
-
-@Injectable()
-export class DataSharingService {
-    public UpdateString: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 }

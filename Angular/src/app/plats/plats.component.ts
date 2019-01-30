@@ -140,11 +140,11 @@ export class PlatsComponent implements OnInit {
 
    deletePanier(key){
     console.log(key)
-    console.log(this.Panier)
+   // console.log(this.liste.name.indexOf('plat1'))
     
-    this.liste = this.liste.filter(liste => liste !== key);
+   // this.liste = this.liste.filter(liste => liste !== key);
      
-     this.liste.push();
+     //this.liste.push();
 
     }
 

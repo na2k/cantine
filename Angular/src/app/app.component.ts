@@ -10,6 +10,7 @@ import * as $ from 'jquery';
 
 
 export class AppComponent implements OnInit {
+  
   public HIDE = true;
   title = 'cantiniereProject';
   liste: any[] = [];
@@ -64,7 +65,7 @@ export class AppComponent implements OnInit {
         this.liste.push({key: cle[i], values:donnees[i]});
         if (donnees[i].email == form.form.value.email)
         {
-          if (donnees[i].mdp == form.form.value.mdp)
+          if (donnees[i].pswd == form.form.value.mdp)
           {
             console.log(donnees[i]);
             console.log(cle[i]);
@@ -99,5 +100,12 @@ export class AppComponent implements OnInit {
     //localStorage.setItem('user', JSON.stringify({login : this.model.username}));
     //this.router.navigate(['/home']);
   }
+
+  logout(){
+    sessionStorage.clear();
+    this.HIDE=true;
+    location.reload();
+  }
+
 
 }

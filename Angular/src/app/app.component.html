@@ -24,9 +24,10 @@
     </div>
   </div>
   <div class="row rounded bg-secondary p-2">
-    <a href="#" class="btn btn-menu standard">Accueil</a>
+    <a [routerLink]="['']" class="btn btn-menu standard">Accueil</a>
     <a [routerLink]="['infos']" class="btn btn-menu standard" *ngIf="HIDE != true" >Votre compte</a>
     <a [routerLink]="['gestion']" class="btn btn-menu standard" *ngIf="HIDE != true" >Gestion</a>
-    <div type="" class="btn standard bgInfosGreen  mt-1" *ngIf="HIDE != true"><span class="align-middle"  >Crédit: <span>{{user?.credit}}</span> €</span></div>
+    <div class="btn standard bgInfosGreen " *ngIf="HIDE != true"><span class="align-middle"  >Crédit: <span>{{user?.money}}</span> €</span></div>
+    <a [routerLink]="['']" class=" btn btn-menu standard bgInfosRed  ml-auto" *ngIf="HIDE != true" (click)='logout()'>Déconnexion</a>
   </div>
 <router-outlet></router-outlet>

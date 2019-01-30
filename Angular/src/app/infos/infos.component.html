@@ -18,15 +18,19 @@
         <form>
           <div class="form-group standardInfos">
             <label for="InputNom">Nom </label>
-            <input type="nom" class="form-control" id="InputNom" placeholder="Nom" readonly="true">
+            <input type="nom" class="form-control" id="InputNom" placeholder="{{user?.lastname}}" readonly="true">
           </div>
           <div class="form-group standardInfos">
             <label for="InputPrenom">Prenom </label>
-            <input type="prenom" class="form-control" id="InputPrenom" placeholder="Prenom" readonly="true">
+            <input type="prenom" class="form-control" id="InputPrenom" placeholder="{{user?.firstname}}" readonly="true">
           </div>
           <div class="form-group standardInfos">
             <label for="InputEmail">Email </label>
-            <input type="email" class="form-control" id="InputEmail" placeholder="Votre adresse email" readonly="true">
+            <input type="email" class="form-control" id="InputEmail" placeholder="{{user?.email}}" readonly="true">
+          </div>
+          <div class="form-group standardInfos">
+            <label for="InputEmail">Numéro de téléphone </label>
+            <input type="email" class="form-control" id="InputEmail" placeholder="{{user?.phone}}" readonly="true">
           </div>
         </form>
       </div>
@@ -34,30 +38,33 @@
         <div class="enTete text-center">
           Modifier vos Infos
         </div>
-        <form>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
           <div class="form-group standardInfos">
             <label for="InputEmail">Nouvel email </label>
-            <input type="email" class="form-control InputEmail" placeholder="Votre nouvelle adresse email">
+            <input type="email" class="form-control InputEmail" placeholder="Votre nouvelle adresse email" name="email" ngModel required>
           </div>
-          <div class="row standardInfos form-group d-flex justify-content-center">
-            <input type="password" class="form-control col-5" id="currentPassword" placeholder="Mot de passe">
-            <button class="submitChangesEmail btn btn-secondary col-5">Changer email</button>
+          <div class="form-group standardInfos">
+            <label for="newPassword">Nouveau numéro de téléphone</label>
+            <input type="text" class="form-control"  placeholder="Votre numéro de téléphone" name="phone" ngModel required>
           </div>
           <div class="form-group standardInfos">
             <label for="newPassword">Nouveau mot de passe</label>
-            <input type="password" class="form-control" id="newPassword" placeholder="Votre nouveau mot de passe">
+            <input type="password" class="form-control"  placeholder="Votre nouveau mot de passe" name="mdp" ngModel required>
           </div>
           <div class="form-group standardInfos">
-            <label for="verifNewPassword">Vérification nouveau mot de passe</label>
-            <input type="password" class="form-control" id="verifNewPassword" placeholder="Votre nouveau mot de passe">
+            <label for="verifNewPassword">Confirmer nouveau mot de passe</label>
+            <input type="password" class="form-control"  placeholder="Confirmer votre nouveau mot de passe" name="mdp2" ngModel required>
           </div>
           <div class="row standardInfos form-group d-flex justify-content-center">
-            <input type="password" class="form-control col-5" id="currentPassword" placeholder="Mot de passe">
-            <button class="submitChangesPassword btn btn-secondary col-5">Changer mot de passe</button>
+            <input type="password" class="form-control col-5"   placeholder="Votre mot de passe actuel" name="verifmdp" ngModel required>
+            <button class="submitChangesPassword btn btn-secondary col-5">Confirmer les changements</button>
           </div>
         </form>
       </div>
     </div>
+
+      <!-- N'a pas de composent dédier -->
+
       <div class="row">
         <div class="col-6 bgInfosPink">
           <div class="text-center enTete mb-3">
