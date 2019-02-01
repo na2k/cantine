@@ -1,4 +1,4 @@
-import { switchMap } from 'rxjs/operators';
+import { switchMap, count } from 'rxjs/operators';
 import { Component, OnInit, Input,EventEmitter, Output } from '@angular/core';
 import { EnkantService } from '../enkant.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -138,13 +138,15 @@ export class PlatsComponent implements OnInit {
      }); 
    }
 
+ 
+
    deletePanier(key){
+    console.log('-------')
     console.log(key)
-   // console.log(this.liste.name.indexOf('plat1'))
-    
-   // this.liste = this.liste.filter(liste => liste !== key);
-     
-     //this.liste.push();
+    this.liste.splice(key,1);
+    console.log('-------')
+    console.log(this.liste)
+
 
     }
 
