@@ -27,6 +27,7 @@
     <a [routerLink]="['']" class="btn btn-menu standard">Accueil</a>
     <a [routerLink]="['infos']" class="btn btn-menu standard" *ngIf="HIDE != true" >Votre compte</a>
     <a [routerLink]="['gestion']" class="btn btn-menu standard" *ngIf="HIDE != true" >Gestion</a>
+    <a class="btn btn-menu standard" *ngIf="HIDE != true" >Gestion cantinière</a>
     <div class="btn standard bgInfosGreen " *ngIf="HIDE != true"><span class="align-middle"  >Crédit: <span>{{user?.money}}</span> €</span></div>
     <a [routerLink]="['']" class=" btn btn-menu standard bgInfosRed  ml-auto" *ngIf="HIDE != true" (click)='logout()'>Déconnexion</a>
   </div>

@@ -1,10 +1,10 @@
 
 <ul class="nav nav-tabs mt-3">
-  <li class="jour enTeteMenu ml-5"><a data-toggle="tab" (click)="selectDay('0')" class="jourMenu" href="#lundi" value="0">Lundi</a></li>
-  <li class="jour enTeteMenu ml-5"><a data-toggle="tab" (click)="selectDay('1')" class="jourMenu" href="#mardi" value="1">Mardi</a></li>
-  <li class="jour enTeteMenu ml-5"><a data-toggle="tab" (click)="selectDay('2')" class="jourMenu" href="#mercredi" value="2">Mercredi</a></li>
-  <li class="jour enTeteMenu ml-5"><a data-toggle="tab" (click)="selectDay('3')" class="jourMenu" href="#jeudi" value="3">Jeudi</a></li>
-  <li class="jour enTeteMenu ml-5"><a data-toggle="tab" (click)="selectDay('4')" class="jourMenu" href="#vendredi" value="4">Vendredi</a></li>
+  <li class="jour enTeteMenu ml-5"><a data-toggle="tab" (click)="selectDay('1')" class="jourMenu" href="#lundi"    >Lundi</a></li>
+  <li class="jour enTeteMenu ml-5"><a data-toggle="tab" (click)="selectDay('2')" class="jourMenu" href="#mardi"    >Mardi</a></li>
+  <li class="jour enTeteMenu ml-5"><a data-toggle="tab" (click)="selectDay('3')" class="jourMenu" href="#mercredi" >Mercredi</a></li>
+  <li class="jour enTeteMenu ml-5"><a data-toggle="tab" (click)="selectDay('4')" class="jourMenu" href="#jeudi"    >Jeudi</a></li>
+  <li class="jour enTeteMenu ml-5"><a data-toggle="tab" (click)="selectDay('5')" class="jourMenu" href="#vendredi" >Vendredi</a></li>
 </ul>
 
 <div class="tab-content">
@@ -34,5 +34,5 @@
     <div class="col-4 colorGrey enTete">Total:</div>
     <div class="col-4 colorPink enTete cout"  ng-click="alert()"> {{ total }} €</div>
     <div class="col-4">
-    <button class="btn btn-block btn-lg enTete" (click)="openDialog()">Commander</button></div>
+    <button class="btn btn-block btn-lg enTete" (click)="openDialog()">Voir votre panier</button></div>
   </div>

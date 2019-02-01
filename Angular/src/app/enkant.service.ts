@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import {throwError as observableThrowError,  Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
-import { plat } from './plat';
+import { Plat } from './Plat';
 import { User } from './user';
-import { Days } from './days';
+
 
 import { BehaviorSubject } from 'rxjs';
 
@@ -18,8 +18,8 @@ export class EnkantService {
 
  //--------------------------------------- [ Partie PLAT ]   // Forte chance que cette partie soit changé entierement pour l'api
     // ** Read  beers
-    getPlats (): Observable<plat[]> {
-      return this.http.get<plat[]>('https://aston-test-2866c.firebaseio.com/plats.json')
+    getPlats (): Observable<Plat[]> {
+      return this.http.get<Plat[]>('https://aston-test-2866c.firebaseio.com/plats.json')
         .pipe(
           tap(data => {
             data
@@ -29,9 +29,9 @@ export class EnkantService {
     }
 
         //** Read one beer */
-    getPlat(key: string): Observable<plat[]>{
+    getPlat(key: string): Observable<Plat[]>{
       console.log('https://aston-test-2866c.firebaseio.com/plats/'+key+'.json')
-      return this.http.get<plat[]>('https://aston-test-2866c.firebaseio.com/plats/'+key+'.json')
+      return this.http.get<Plat[]>('https://aston-test-2866c.firebaseio.com/plats/'+key+'.json')
       .pipe(
         tap(data => JSON.stringify(data)),
         catchError(this.handleError('getPlat', []))
@@ -39,24 +39,15 @@ export class EnkantService {
     }
 
 
-    deletePlats(key: string): Observable<plat>{
+    deletePlats(key: string): Observable<Plat>{
       let url = `https://aston-test-2866c.firebaseio.com/plats/`+key+'.json';
-      return this.http.delete<plat>(url)
+      return this.http.delete<Plat>(url)
         .pipe(
           tap(data=>data),
-          catchError(this.handleError<plat>('deleteplats'))
+          catchError(this.handleError<Plat>('deleteplats'))
         );
     }
 
-    getdays (): Observable<Days[]> {
-      return this.http.get<Days[]>('https://aston-test-2866c.firebaseio.com/day.json')
-        .pipe(
-          tap(data => {
-            data
-          }),
-          catchError(this.handleError('getdays', []))
-        );
-    }
 //--------------------------------------- [ Partie USER ]  // Forte chance que cette partie soit changé entierement pour l'api
 
       //* Récupere tout les utilisateurs */

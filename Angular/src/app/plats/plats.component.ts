@@ -2,7 +2,7 @@ import { switchMap, count } from 'rxjs/operators';
 import { Component, OnInit, Input,EventEmitter, Output } from '@angular/core';
 import { EnkantService } from '../enkant.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { plat } from '../plat';
+import { Plat }  from '../Plat';
 
 
 
@@ -14,7 +14,7 @@ import { plat } from '../plat';
 export class PlatsComponent implements OnInit {
   
   @Output() event = new EventEmitter<string>();
-  @Input() day: any = 0;
+  @Input() day: string = '1';
   @Input() etatPanier: boolean  = false;
   ngOnChanges() {
     if ( this.firstTime == false)
@@ -28,10 +28,11 @@ export class PlatsComponent implements OnInit {
     
 }
   Hide : boolean = true ;
+  i : number = 0 ;
   liste: any[] = [];
   key : any[] = [];
   Dliste: any[] = [];
-  plat:plat[];
+  plat: Plat[];
   Ddonnees : any[] = [];
   firstTime : boolean = true ;
   hidePanier : boolean = false ;
@@ -59,32 +60,46 @@ export class PlatsComponent implements OnInit {
         this.Hide=false;
       }
 
-    this.enkantService.getdays()
-    .subscribe(data => {
-      //console.log(data);
-      let cle = Object.keys(data);
-      this.Ddonnees = Object.values(data);
-      this.Dliste = [];
-      for(let i = 0; i < cle.length; i++){
-        this.Dliste.push({key: cle[i], values:this.Ddonnees[i]});
-      }
-      console.log(this.Ddonnees[this.day]);
-      console.log(this.Dliste);
-     }); 
+    
     this.enkantService.getPlats()
     .subscribe(data => {
-      //console.log(data);
-      let cle = Object.keys(data);
-      let donnees = Object.values(data);
-      let Platjour = this.Dliste[this.day].values;
-      console.log("Platjour : " + Platjour);
-      let PlatjourSplit = Platjour.split(',');
-      console.log(PlatjourSplit);
-      for(let i = 0; i < PlatjourSplit.length; i++){
-        this.liste.push(donnees[cle.indexOf(PlatjourSplit[i])]);
-        this.key.push(PlatjourSplit[i]);
-      }
-      console.log(this.liste)
+       console.log(data);
+       let cle = Object.keys(data);
+       this.plat = Object.values(data);
+       while ( this.i < this.plat.length)
+       {
+        console.log('-----');
+        console.log(this.plat[this.i].jour.indexOf(this.day));
+        if(this.plat[this.i].jour.indexOf(this.day) !== -1)
+        {
+          console.log(cle[this.i]);
+          this.liste.push(this.plat[cle.indexOf(cle[this.i])]);
+          this.key.push(cle[this.i]);
+        }
+        console.log('-----');
+        console.log(this.day);
+        console.log(this.plat[this.i].jour);
+        console.log(this.key)
+        console.log('Boucle '+this.i)
+
+
+
+        this.i++;
+       }
+       this.i=0;
+       
+
+       // / ! \ LAISSER EN COMMENTAIRE, SERT DE REFERENCE  / ! \
+       //
+       //let Platjour = data.filter(data => data.jour !== this.day);
+      // console.log("Platjour : " + Platjour);
+      // let PlatjourSplit = Platjour.split(',');
+      // console.log(PlatjourSplit);
+      //  for(let i = 0; i < this.plat.length; i++){
+      //    this.liste.push(this.plat[cle.indexOf(cle[i])]);
+      //    this.key.push(this.plat[i]);
+      //  }
+      // console.log(this.liste)
       
      }); 
    }

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-import { plat } from '../plat';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 export interface DialogData {
@@ -12,7 +11,7 @@ export interface DialogData {
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  day = 0 ;
+  day = 1 ;
   total : number = 0;
   constructor(public dialog: MatDialog) {}
 
