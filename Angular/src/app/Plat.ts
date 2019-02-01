@@ -1,4 +1,4 @@
-// Adaptation vers la classe/json pannier ionic en cours
+// Adaptation vers la classe/json pannier ionic quasi-terminé
 // l'ordre n'est pas définitif
 export class Plat {
     constructor(
@@ -7,7 +7,7 @@ export class Plat {
         public name: string, 
         public price: string,
         public decripstion: string,
-        public image: string,
+        public image: string, // Peut encore changer de place
 
         
     )
